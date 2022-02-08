@@ -1,6 +1,6 @@
 import "./style.css"
 
-export const SearchItem = () => {
+export const SearchItem = ({search, setSearch}) => {
     return (
         <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
             <label htmlFor="search">Search</label>
@@ -8,8 +8,9 @@ export const SearchItem = () => {
               id="search"
               type="text"
               role="search"
-              placeholder="search item"
-
+              placeholder="Search item"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
         </form>
     );
